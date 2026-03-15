@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.class
+.env
+venv/
+.venv/
+data/*.csv
+models/*.h5
+models/*.keras
+.vscode/
+.idea/
+.DS_Store
