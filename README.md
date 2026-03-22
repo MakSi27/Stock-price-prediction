@@ -1,30 +1,116 @@
-# Stock Price Prediction using Stacked LSTM: An End-to-End Deep Learning Pipeline
+# ValueTrack — Customer Lifetime Value Predictor
 
-This repository hosts a "Major Project" focused on time-series forecasting in the financial domain. Utilizing a **Stacked Long Short-Term Memory (LSTM)** architecture, the project implements a modular, research-oriented pipeline to predict stock closing prices using historical data and technical indicators.
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![ML](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange.svg)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow.svg)
 
-## 🚀 Project Goal
-To build a reproducible and scalable deep learning workflow that bridges the gap between raw financial data and actionable insights, culminating in a research paper and a real-time Streamlit dashboard.
+## Overview
+
+ValueTrack is a Machine Learning based project that predicts the **Lifetime Value (LTV)** of a customer for a retail/fashion brand. By analyzing customer behavior, purchase history, demographics, and shopping patterns, the model estimates how much value a customer will bring to the business over time.
+
+This helps businesses identify their most valuable customers, optimize marketing spend, and improve customer retention strategies.
+
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
-The project follows a **Layered Design Pattern** to ensure modularity and research integrity.
+```
+valuetrack/
+├── data/
+│   ├── raw/                # Original unprocessed dataset
+│   └── processed/          # Cleaned and feature engineered data
+├── experiments/
+│   ├── logs/               # Training logs and experiment tracking
+│   └── plots/              # EDA and model performance visualizations
+├── models/                 # Saved trained models
+├── notebooks/              # Jupyter notebooks for EDA and modeling
+├── research/               # Reference papers and research material
+├── src/                    # Source code and helper scripts
+├── app.py                  # Streamlit dashboard
+├── main.py                 # Main pipeline entry point
+├── requirements.txt        # Project dependencies
+├── .gitignore
+└── README.md
+```
 
-```text
-Stock_Prediction_Project/
-├── research/              # Academic workspace (Literature review & Paper drafts)
-├── experiments/           # Evidence Vault (Training logs & performance plots)
-├── src/                   # The Engine (Modular Python layers)
-│   ├── data_loader.py     # Layer 1: Data Ingestion (yfinance API)
-│   ├── processor.py       # Layer 2: Feature Engineering & Windowing
-│   ├── model_builder.py   # Layer 3: Stacked LSTM Architecture
-│   ├── trainer.py         # Layer 4: Training & Validation Logic
-│   └── evaluator.py       # Layer 5: Research Metrics (RMSE, MAPE, DA)
-├── data/                  # Local data storage (Git-ignored)
-├── models/                # Trained model vault (.h5 / .keras files)
-├── notebooks/             # Experimental "Scratchpad" for EDA
-├── app.py                 # Streamlit Dashboard (Live Demo)
-├── main.py                # Pipeline Orchestrator
-├── requirements.txt       # Project dependencies
-└── .gitignore             # Git exclusion rules
+---
+
+## Dataset Features
+
+| Column | Description |
+|---|---|
+| Customer ID | Unique identifier for each customer |
+| Age | Age of the customer |
+| Gender | Male / Female |
+| Item Purchased | Name of the product purchased |
+| Category | Product category |
+| Purchase Amount (USD) | Amount spent per transaction |
+| Location | Customer location |
+| Size | Product size |
+| Color | Product color |
+| Season | Season of purchase |
+| Review Rating | Customer rating after purchase |
+| Subscription Status | Whether customer is subscribed or not |
+| Shipping Type | Shipping method chosen |
+| Discount Applied | Whether discount was used |
+| Promo Code Used | Whether promo code was applied |
+| Previous Purchases | Number of previous purchases |
+| Payment Method | Mode of payment |
+| Frequency of Purchases | How often the customer purchases |
+
+---
+
+## Project Workflow
+
+```
+Raw Data → EDA → Feature Engineering → RFM Analysis → Model Building → LTV Prediction → Insights
+```
+
+1. **Data Cleaning** — Handle missing values, fix data types
+2. **EDA** — Explore patterns, purchase behavior, seasonal trends
+3. **Feature Engineering** — Build RFM (Recency, Frequency, Monetary) features
+4. **LTV Calculation** — Define and compute LTV target variable
+5. **Model Building** — Train ML models (Linear Regression, XGBoost, Random Forest)
+6. **Evaluation** — RMSE, MAE, R2 Score
+7. **Insights** — Top customer segments, high value customer profiles
+
+---
+
+## Tech Stack
+
+- **Language** — Python 3.8+
+- **Data Processing** — Pandas, NumPy
+- **Visualization** — Matplotlib, Seaborn
+- **Machine Learning** — Scikit-Learn, XGBoost
+- **Dashboard** — Streamlit
+- **Environment** — Jupyter Notebook
+
+---
+
+## Key Business Questions Answered
+
+- Which customers have the highest lifetime value?
+- Which age group spends the most?
+- Does subscription status impact LTV?
+- Which season drives maximum purchases?
+- Do promo codes attract high value or low value customers?
+
+
+---
+
+## Results
+
+> Will be updated once model training is complete.
+
+---
+
+## Team
+
+> Add your team member names here.
+
+---
+
+## License
+
+MIT License
