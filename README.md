@@ -63,8 +63,25 @@ valuetrack/
 
 ## Project Workflow
 
-```
-Raw Data → EDA → Feature Engineering → RFM Analysis → Model Building → LTV Prediction → Insights
+```mermaid
+graph LR
+    A[Raw Data] --> B[Data Cleaning]
+    B --> C[EDA]
+    C --> D[Feature Engineering]
+    D --> E[Model Training]
+    E --> F[Evaluation]
+    F --> G{Needs<br>Tuning?}
+    G -- Yes --> D
+    G -- No --> H[LTV Prediction<br>& Insights]
+
+    style A fill:#6f42c1,stroke:#fff,stroke-width:2px,color:#fff
+    style B fill:#28a745,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#007bff,stroke:#fff,stroke-width:2px,color:#fff
+    style D fill:#fd7e14,stroke:#fff,stroke-width:2px,color:#fff
+    style E fill:#e83e8c,stroke:#fff,stroke-width:2px,color:#fff
+    style F fill:#28a745,stroke:#fff,stroke-width:2px,color:#fff
+    style G fill:#ffc107,stroke:#fff,stroke-width:2px,color:#000
+    style H fill:#6f42c1,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 1. **Data Cleaning** — Handle missing values, fix data types
