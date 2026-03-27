@@ -10,15 +10,11 @@ from src.model_builder import (
 def split_data(df):
    
     X = df.drop([
-        "LTV",
-        "Purchase Amount (USD)",
-        "Frequency of Purchases",
-        "Previous Purchases",
-        "Review Rating",
-        "Subscription Status"
+        "ltv",
+        "customer_segment"
     ], axis=1)
 
-    y = df["LTV"]
+    y = df["customer_segment"]
 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y,
